@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.clemente.lab01holamundo.ui.theme.Lab01HolaMundoTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.ui.unit.sp
+import androidx.compose.material3.Button
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,12 @@ class MainActivity : ComponentActivity() {
                         name = "Nilton",
                         modifier = Modifier.padding(innerPadding)
                     )
+
+
+
+
+
+
                 }
             }
         }
@@ -37,10 +44,17 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     Column(modifier = modifier) {
         Text(text = "¡Hola, soy $name!", fontSize = 24.sp)
         Text(text = "Curso: Programación en Móviles")
+    FilledButtonExample {  }
 }
 }
 
 
+@Composable
+fun FilledButtonExample(onClick: () -> Unit) {
+    Button(onClick = { onClick() }) {
+        Text("Presioname")
+    }
+}
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
